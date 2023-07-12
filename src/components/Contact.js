@@ -4,7 +4,7 @@ import {fadeIn} from "../variants"
 
 const Contact = () => {
   return (
-  <section id="contact" className='py-16 lg:section'>
+  <section id="contact" className='py-16 lg:section mt-[200px]'>
     <div className='container mx-auto'>
       <div className='flex flex-col lg:flex-row'>
 
@@ -50,7 +50,7 @@ const Contact = () => {
            ></textarea>
            <button className='btn btn-lg'>Send massage</button>
         </motion.form>
-        
+
       </div>
     </div>
   </section>

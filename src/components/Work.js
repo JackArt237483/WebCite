@@ -7,7 +7,7 @@ import img3 from "../assets/portfolio-img3.png"
 
 const Work = () => {
   return(
-  <section id="work" className='section'>
+  <section id="work" className='section mt-[200px]'>
      <div className='container mx-auto'>
        <div className='flex flex-col lg:flex-row gap-x-10'>
          <motion.div

@@ -28,7 +28,7 @@ const servies = [
 
 const Services = () => {
   return (
-  <section id="services" className='section'>
+  <section id="services" className='section mt-[200px]'>
     <div className='container mx-auto'>
      <div className='flex flex-sol lg:flex-row'>
       <motion.div
