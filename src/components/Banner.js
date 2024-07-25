@@ -1,9 +1,10 @@
 import React from 'react';
-import Image from "../assets/avatar.svg"
+import Image from "../assets/My_bro.jpg"
 import {FaGithub,FaYoutube,FaTelegram} from "react-icons/fa"
 import {TypeAnimation} from "react-type-animation"
 import {motion} from "framer-motion"
 import {fadeIn} from "../variants"
+import { Link } from 'react-scroll';
 
 const Banner = () => {
   return(
@@ -18,7 +19,7 @@ const Banner = () => {
              whileInView={"show"}
              viewport={{once: false, amount: 0.7}}
             className="text-[55px] font-bold leading-[0.8] first-letter:
-            lg:text-[110px]">ARTEM <span>KHARCHENKO</span>
+            lg:text-[95px]">АРТЕМ <span> ХАРЧЕНКО</span>
             </motion.h1>
             <motion.div
               variants={fadeIn('up', 0.4)}
@@ -27,17 +28,18 @@ const Banner = () => {
               viewport={{once: false, amount: 0.7}}
             className='mb-6 text-[36px] lg:text-[60px] font-secondary
             font-semibold uppercase leading-[1]'>
-              <span className='mr-4 text-white'>I am a</span>
-              <TypeAnimation sequence={[
-                "Developer",
-                2000,
-                "Beginer",
-                2000,
-                "Like coding",
-                2000,
-              ]}
+              <span className='mr-4 text-white text-[40px]'>Я</span>
+              <TypeAnimation
+                sequence={[
+                  "Веб-разработчик",
+                  2000,
+                  "В поисках знаний",
+                  2000,
+                  "Стремлюсь к совершенству",
+                  2000,
+                ]}
                 speed={60}
-                className='text-accent'
+                className='text-accent text-[29px]'
                 wrapper='span'
                 repeat={Infinity}
               />
@@ -47,7 +49,7 @@ const Banner = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{once: false, amount: 0.7}}
-            className='mb-8 max-w-lg mx-auto lg:mx-0'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci ipsam porro nobis, dolorem ut est a deserunt tenetur praesentium deleniti.
+            className='mb-8 max-w-lg mx-auto lg:mx-0'>Я начинающий разработчик с более чем полтора года опыта в создании веб-приложений и разработке пользовательских интерфейсов. В своей работе я сосредоточен на применении современных технологий и подходов для решения задач и создания эффективных решений. 
             </motion.p>
             <motion.div
             variants={fadeIn('up', 0.6)}
@@ -56,8 +58,15 @@ const Banner = () => {
             viewport={{once: false, amount: 0.7}}
             className='flex max-w-max gap-x-6 items-center mb-12
             mx-auto lg:mx-0'>
-              <button className='btn btn-lg'>Contact me</button>
-              <a href="#" className='text-gradient btn-link'>My Portfolio</a>
+              <Link
+               activeClass="active"
+               smooth={true}
+               spy={true}
+               offset={-200}
+               to="contact"
+              >
+              <button className='btn btn-lg'>Связаться со мной</button>
+              </Link>
             </motion.div>
             <motion.div
             variants={fadeIn('down', 0.7)}
@@ -83,7 +92,7 @@ const Banner = () => {
               whileInView={"show"}
             className='hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]
             '>
-              <img src={Image} alt=""/>
+              <img src={Image} alt="" className="rounded-[100%]"/>
             </motion.div>
         </div>
       </div>

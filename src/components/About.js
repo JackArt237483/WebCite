@@ -3,6 +3,7 @@ import CountUp from "react-countup"
 import {useInView} from "react-intersection-observer"
 import {motion} from "framer-motion"
 import {fadeIn} from "../variants"
+import { Link } from 'react-scroll';
 
 const About = () => {
   const [ref,inView] = useInView({
@@ -19,8 +20,8 @@ const About = () => {
          initial="hidden"
          whileInView={"show"}
          viewport={{once:false, amount: 0.3}}
-        className='flex-1 bg-about bg-contain bg-no-repeat h-[640px]
-        mix-blend-lighten bg-top'>
+        className='flex-1 bg-about bg-contain  h-[540px]
+        mix-blend-lighten bg-top rounded-[100%]'>
         </motion.div>
         <motion.div
          variants={fadeIn("left", 0.5)}
@@ -28,57 +29,49 @@ const About = () => {
          whileInView={"show"}
          viewport={{once:false, amount: 0.3}}
         className='flex-1'>
-          <h2 className='h2 text-accent'>About me.</h2>
-          <h3 className='h3 mb-4'>Я Начинающий Фронтенд Разработчик с одним годом опыта</h3>
-          <p className='mb-6'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, sed fuga assumenda placeat aut magni totam dignissimos non et repudiandae.
-          </p>
+          <h2 className='h2 text-accent'>Обо мне</h2>
+            <h3 className='h3 mb-4'>Я начинающий фронтенд-разработчик с годом опыта</h3>
+            <p className='mb-6'>
+              В течение последнего года я активно развиваюсь в сфере веб-разработки, работая над различными проектами, которые помогают мне совершенствовать свои навыки. 
+            </p>
           <div className='flex'>
             <div>
               <div className='text-[40px] font-tertiary text-gradient
               mb-2'>
                 {
-                  inView ? < CountUp  start={0} end={13} duration={3}/> :
+                  inView ? < CountUp  start={0} end={1} duration={3}/> :
                   null}
               </div>
               <div className='font-primary text-sm tracking-[2px]'>
-                Years of<br/>
-                Exprience
+                Год<br/>
+                Опыта
               </div>
             </div>
             <div className='ml-8'>
               <div className='text-[40px] font-tertiary text-gradient
               mb-2'>
                 {
-                  inView ? < CountUp start={0} end={15} duration={3}/> :
+                  inView ? < CountUp start={0} end={10} duration={3}/> :
                   null}
-                  k+
+                  шт
               </div>
               <div className='font-primary text-sm tracking-[2px]'>
-                Project<br/>
+                Проектов<br/>
                 Закончил
               </div>
             </div>
-            <div className='ml-8'>
-              <div className='text-[40px] font-tertiary text-gradient
-              mb-2'>
-                {
-                  inView ? < CountUp start={0} end={13} duration={3}/> :
-                  null}
-                  k+
-              </div>
-              <div className='font-primary text-sm tracking-[2px]'>
-                Довольные<br/>
-                Клиенты
-              </div>
-            </div>
           </div>
-            <div className='flex mt-12 gap-x-8 items-center'>
-              <button className='btn btn-lg'>Сontact me</button>
-              <a href='#' className='text=gradient btn-link'>
-                My Portfolio
-              </a>
+          <Link
+           activeClass="active"
+           smooth={true}
+           spy={true}
+           offset={-200}
+           to="contact"
+          >
+           <div className='flex mt-12 gap-x-8 items-center'>
+              <button className='btn btn-lg'>Связаться со мной</button>
             </div>
+          </Link>  
         </motion.div>
       </div>
     </div>
